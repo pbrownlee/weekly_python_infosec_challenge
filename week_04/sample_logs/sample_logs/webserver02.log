@@ -1,0 +1,5 @@
+2026-01-15 10:00:00 INFO Server started on port 8080
+2026-01-15 10:01:15 INFO GET /index.html 200 from 10.0.0.30
+2026-01-15 10:03:22 INFO User 'bob' logged in successfully from 10.0.0.30
+2026-01-15 10:05:47 INFO GET /products.html 200 from 10.0.0.31
+2026-01-15 10:11:09 INFO User 'bob' logged out
