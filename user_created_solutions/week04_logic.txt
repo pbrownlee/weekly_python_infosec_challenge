@@ -1,0 +1,10 @@
+1. Main program starts - Setup Logging at INFO level
+2. Parse argument - 1 required positional for the directory (argparse)
+3. Test if argument is a directory. If not, exit (1) with clean error message saying that a directory is needed (pathlib -> Path). Check for valid directory. Exit if not
+4. Main will send valid directory path object to audit_directory function 
+4a. audit_directory will collect each file with .log in the directory "collect_log_files". Check for valid log file but don't stop if not valid
+4b. audit_directory will hash each file found "hash_file" (hashlib). Make sure file can be hash, but don't stop if not
+4c. audit_directory will scan each log file for allocated findings "scan_log_file" (Collection -> Counter). If file can be read for whatever reason, don't stop 
+4d. audit_directory will return the results to the main function 
+5. Main function prints the return "audit_directory" values using the print funtion "print_summary"
+6. Program exits
