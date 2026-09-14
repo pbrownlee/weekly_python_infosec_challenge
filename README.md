@@ -15,7 +15,7 @@ Every week (1-19) follows the same "Plan It First" discipline: write one sentenc
 
 ## How a week works
 
-Each `week_NN/` folder (zero-padded, e.g. `week_04`) holds that week's challenge materials as delivered:
+Each `course_material/week_NN/` folder (zero-padded, e.g. `week_04`) holds that week's challenge materials as delivered:
 
 - `weekNN_challenge.md` — the brief: problem statement, learning objectives, "Plan It First" planning steps, a worked trace example, constraints, expected output, and graduated hints.
 - `weekNN_starter.py` — the starting point to build from. Scaffolding fades as the tiers advance: fully decomposed functions in the early weeks, down to just the entry point/CLI shape by the advanced tier.
@@ -27,8 +27,8 @@ Each `week_NN/` folder (zero-padded, e.g. `week_04`) holds that week's challenge
 
 Two top-level folders separate the reference material from personal work, so it's always clear which is which:
 
-- **`course_generated_solutions/`** — the reference solution and reasoning walkthrough generated for each week (`weekNN_solution.py` + `weekNN_explanation.md`). These arrive one week behind — the solution for week *N* is delivered alongside week *N+1*'s challenge — so review happens after a real attempt, not before.
-- **`user_created_solutions/`** — my own finished code for each week (`weekNN_finished.py`), plus whatever else I wrote myself while working through it: my pytest tests (`weekNN_test.py`), my Mermaid planning charts (`weekNN_chart.md`), and any planning notes (e.g. `weekNN_logic.txt`). This is the "did I actually solve it" record, kept separate from both the starter code and the reference answer.
+- **`course_generated_solutions/`** — the reference solution and reasoning walkthrough generated for each week, one `week_NN/` subfolder per week (`week_NN/weekNN_solution.py` + `week_NN/weekNN_explanation.md`). These arrive one week behind — the solution for week *N* is delivered alongside week *N+1*'s challenge — so review happens after a real attempt, not before.
+- **`user_created_solutions/`** — my own finished code for each week, one `week_NN/` subfolder per week (`week_NN/weekNN_finished.py`), plus whatever else I wrote myself while working through it: my pytest tests (`weekNN_test.py`), my Mermaid planning charts (`weekNN_chart.md`), and any planning notes (e.g. `weekNN_logic.txt`). This is the "did I actually solve it" record, kept separate from both the starter code and the reference answer.
 
 ## Curriculum map
 
@@ -88,10 +88,10 @@ Two top-level folders separate the reference material from personal work, so it'
 
 Feel free to clone this repo and work through the challenges on your own — the briefs, starter code, sample data, and tests don't depend on anything personal to me.
 
-1. Clone the repo and open a week's folder (`week_01/`, `week_02/`, …).
+1. Clone the repo and open a week's folder (`course_material/week_01/`, `course_material/week_02/`, …).
 2. Read that week's `weekNN_challenge.md` first, in full, before touching code — it has the problem statement, the "Plan It First" planning steps, a worked example, and graduated hints if you get stuck.
 3. Build your solution against `weekNN_starter.py`, then run `pytest -v weekNN_test.py` (from week 5 on, `pip install -r requirements.txt` first) until it's green.
-4. Only after you have your own working solution, compare it against `course_generated_solutions/weekNN_solution.py` and its `weekNN_explanation.md` — reading the reference first defeats the point.
+4. Only after you have your own working solution, compare it against `course_generated_solutions/week_NN/weekNN_solution.py` and its `weekNN_explanation.md` — reading the reference first defeats the point.
 5. From week 5 on, if you fork the repo, `.github/workflows/ci.yml` will run pytest plus a `bandit` scan automatically on every push.
 
 One caveat: the weekly *delivery* — a new challenge landing on a fixed schedule, paired with a reasoning walkthrough on the previous one — is driven by a private scheduled Claude task tailored to my own skill gaps (diagnosed up front, then referenced throughout). Cloning the repo gets you everything already generated, growing by one week at a time, but not that personal delivery mechanism itself. If you want the same "one challenge a week, automatically" experience, the more direct path is setting up something equivalent yourself; otherwise the material published here stands on its own as a self-paced syllabus you can work through at whatever pace suits you.
