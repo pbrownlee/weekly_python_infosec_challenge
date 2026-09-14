@@ -21,7 +21,7 @@ Each `course_material/week_NN/` folder (zero-padded, e.g. `week_04`) holds that 
 - `weekNN_starter.py` — the starting point to build from. Scaffolding fades as the tiers advance: fully decomposed functions in the early weeks, down to just the entry point/CLI shape by the advanced tier.
 - `weekNN_test.py` — pytest tests (a couple of pre-written ones in week 3 to learn from; from week 5 on, a full CI-safe suite exercising the week's functions).
 - Any sample data the week needs (e.g. `sample_logs/`).
-- Starting week 5: `requirements.txt` and `.github/workflows/ci.yml`, so every push runs pytest plus a `bandit` security scan.
+- Starting week 5: `requirements.txt` and `.github/workflows/ci.yml`, so every push runs pytest plus a `bandit` security scan, both scoped to `user_created_solutions/` — my own code, not the starter scaffolding or reference solutions.
 
 ## Where the actual solutions live
 
@@ -92,7 +92,7 @@ Feel free to clone this repo and work through the challenges on your own — the
 2. Read that week's `weekNN_challenge.md` first, in full, before touching code — it has the problem statement, the "Plan It First" planning steps, a worked example, and graduated hints if you get stuck.
 3. Build your solution against `weekNN_starter.py`, then run `pytest -v weekNN_test.py` (from week 5 on, `pip install -r requirements.txt` first) until it's green.
 4. Only after you have your own working solution, compare it against `course_generated_solutions/week_NN/weekNN_solution.py` and its `weekNN_explanation.md` — reading the reference first defeats the point.
-5. From week 5 on, if you fork the repo, `.github/workflows/ci.yml` will run pytest plus a `bandit` scan automatically on every push.
+5. From week 5 on, if you fork the repo, `.github/workflows/ci.yml` will run pytest plus a `bandit` scan against `user_created_solutions/` automatically on every push. If you put your own solutions somewhere else, update both commands in that workflow file to point at your folder instead — otherwise CI will run against an empty (or wrong) path.
 
 One caveat: the weekly *delivery* — a new challenge landing on a fixed schedule, paired with a reasoning walkthrough on the previous one — is driven by a private scheduled Claude task tailored to my own skill gaps (diagnosed up front, then referenced throughout). Cloning the repo gets you everything already generated, growing by one week at a time, but not that personal delivery mechanism itself. If you want the same "one challenge a week, automatically" experience, the more direct path is setting up something equivalent yourself; otherwise the material published here stands on its own as a self-paced syllabus you can work through at whatever pace suits you.
 
