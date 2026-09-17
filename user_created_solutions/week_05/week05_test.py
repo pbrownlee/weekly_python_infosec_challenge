@@ -9,13 +9,12 @@ Implement each function, then re-run pytest to watch them pass.
 """
 
 import pytest
-
 from week05_finished import (
-    shift_char,
-    caesar_encode,
-    caesar_decode,
-    score_text,
     brute_force_crack,
+    caesar_decode,
+    caesar_encode,
+    score_text,
+    shift_char,
 )
 
 

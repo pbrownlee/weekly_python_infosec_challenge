@@ -1,2 +1,4 @@
 pytest
 bandit
+pre-commit
+ruff

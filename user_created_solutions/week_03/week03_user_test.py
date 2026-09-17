@@ -19,7 +19,6 @@ for it yourself - see the TODOs at the bottom of this file).
 """
 
 import pytest
-
 from week03_finished import (
     check_limit_reached,
     get_last_n_attempts,
@@ -56,7 +55,6 @@ def test_get_last_n_attempts_returns_n_items():
     assert get_last_n_attempts(log, 2) == ["carol", "dave"]
 
 
-
 # --- Add your own tests below ---
 # TODO 1: write a test for parse_attempt_limit("not_a_number"). What
 #         should it return? Run `python week03_starter.py` first and
@@ -69,16 +67,15 @@ def test_get_last_n_attempts_returns_n_items():
 #         think about what type each argument actually is before you
 #         write down the expected result.
 
+
 def test_parse_attempt_limit_returns_int_or_none():
     """parse_attempt_limit('not_a_number') should return None"""
-    assert parse_attempt_limit('not_a_number') == None
+    assert parse_attempt_limit("not_a_number") == None
 
-@pytest.mark.parametrize("i, r", [
-    ('3', True),
-    ('whatever', False)
-])
+
+@pytest.mark.parametrize("i, r", [("3", True), ("whatever", False)])
 def test_check_limit_reached_returns_right_boolean(i, r):
-    """check_limit_reached('3') returns True is limit = 3 
- check_limit_reached('whatever') returns False"""
+    """check_limit_reached('3') returns True is limit = 3
+    check_limit_reached('whatever') returns False"""
     limit = 3
     assert check_limit_reached(i, limit) == r
