@@ -63,7 +63,7 @@ def hash_file(filepath: Path) -> str:
         print(f"Error: Insufficent permissions reading '{filepath}'")
     except OSError as e:
         print(f"System error reading '{filepath}': {e}")
-    except Exception as e: # noqa: BLE001 -- deliberate fault-isolation boundary: one file in a batch, always logged, never swallowed
+    except Exception as e:  # noqa: BLE001 -- deliberate fault-isolation boundary: one file in a batch, always logged, never swallowed
         print(f"General error reading '{filepath}': {e}")
     return result_hash
 

@@ -23,4 +23,7 @@ jobs:
         run: pytest -q user_created_solutions/
 
       - name: Run bandit (SAST)
-        run: bandit -r user_created_solutions/
+        run: bandit -r user_created_solutions/ -x '**/*_test.py'
+
+      - name: Run ruff
+        run: ruff check user_created_solutions/

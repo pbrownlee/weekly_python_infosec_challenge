@@ -18,8 +18,26 @@ import re
 # A small set of very common English words, useful for scoring how
 # "English-like" a candidate decoding is. Feel free to extend this list.
 COMMON_WORDS = {
-    "the", "and", "is", "to", "of", "a", "in", "that", "it", "for",
-    "on", "with", "as", "was", "at", "by", "an", "be", "this", "have",
+    "the",
+    "and",
+    "is",
+    "to",
+    "of",
+    "a",
+    "in",
+    "that",
+    "it",
+    "for",
+    "on",
+    "with",
+    "as",
+    "was",
+    "at",
+    "by",
+    "an",
+    "be",
+    "this",
+    "have",
 }
 
 
@@ -38,9 +56,9 @@ def shift_char(char: str, shift: int) -> str:
     # we can just return non alphanumeric characters with no actions performed
     if not char.isalpha():
         return char
-    
-    # otherwise we do the shifting 
-    start = ord('a') if char.islower() else ord('A')
+
+    # otherwise we do the shifting
+    start = ord("a") if char.islower() else ord("A")
     return chr((ord(char) - start + shift) % 26 + start)
 
 
@@ -51,7 +69,7 @@ def caesar_encode(text: str, shift: int) -> str:
     """
     encoded_string = ""
     for char in text:
-       encoded_string += shift_char(char, shift)
+        encoded_string += shift_char(char, shift)
     return encoded_string
 
 
@@ -82,7 +100,7 @@ def score_text(text: str) -> float:
     # note: we don't have to return this modified string in the final result
     counter = 0.0
     clean_text = re.sub(r"[^a-zA-Z]+", " ", text).strip()
-    for word in clean_text.lower().split(' '):
+    for word in clean_text.lower().split(" "):
         if word in COMMON_WORDS:
             counter += 0.1
     return counter
@@ -96,7 +114,7 @@ def brute_force_crack(text: str) -> tuple[int, str]:
     in a loop -- no new cipher logic needed here.
     """
     best_shift, best_decoded, best_score = 0, text, float("-inf")
-    for shift in range(0,26):
+    for shift in range(26):
         decoded_text = caesar_decode(text, shift)
         score = score_text(decoded_text)
         if score > best_score:
@@ -108,11 +126,15 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Caesar Cipher Toolkit")
     subparsers = parser.add_subparsers(dest="mode", required=True)
 
-    encode_parser = subparsers.add_parser("encode", help="Encode text with a given shift")
+    encode_parser = subparsers.add_parser(
+        "encode", help="Encode text with a given shift"
+    )
     encode_parser.add_argument("--text", required=True, help="Text to encode")
     encode_parser.add_argument("--shift", required=True, type=int, help="Shift amount")
 
-    decode_parser = subparsers.add_parser("decode", help="Decode text with a given shift")
+    decode_parser = subparsers.add_parser(
+        "decode", help="Decode text with a given shift"
+    )
     decode_parser.add_argument("--text", required=True, help="Text to decode")
     decode_parser.add_argument("--shift", required=True, type=int, help="Shift amount")
 
