@@ -1,0 +1,3 @@
+cracking logic:
+
+Take a phrase shifted by 5 "the rain in spain is the man". That results in "yje wfns ns xufns nx yje rfs". To find the shift value, split each word with into a list (stipped of punctuation) and run 0 through 25 shift values on each word. Check and see if each work matches on the COMMON_WORDS and score according to the percent of words that match.
