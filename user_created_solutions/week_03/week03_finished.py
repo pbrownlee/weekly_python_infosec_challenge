@@ -64,7 +64,7 @@ def check_limit_reached(attempts_str, limit):
             return True
     except ValueError:
         return False
-    
+
     return False
 
 
