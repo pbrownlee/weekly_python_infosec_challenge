@@ -96,6 +96,17 @@ Feel free to clone this repo and work through the challenges on your own — the
 
 One caveat: the weekly *delivery* — a new challenge landing on a fixed schedule, paired with a reasoning walkthrough on the previous one — is driven by a private scheduled Claude task tailored to my own skill gaps (diagnosed up front, then referenced throughout). Cloning the repo gets you everything already generated, growing by one week at a time, but not that personal delivery mechanism itself. If you want the same "one challenge a week, automatically" experience, the more direct path is setting up something equivalent yourself; otherwise the material published here stands on its own as a self-paced syllabus you can work through at whatever pace suits you.
 
+## Using pre-commit
+
+On top of the CI checks that run on GitHub after a push, this repo uses [pre-commit](https://pre-commit.com/) to catch the same lint/format issues locally, before a commit is even made:
+
+1. `pip install -r requirements.txt` (already includes `pre-commit` and `ruff`).
+2. `pre-commit install` — one-time setup per clone, wires the hooks into `.git/hooks/pre-commit`.
+
+From then on, every `git commit` automatically runs `ruff check --fix` and `ruff format` (config in `.pre-commit-config.yaml`) against the files being committed. If a hook finds something fixable, it fixes it in place and stops the commit so the fix can be reviewed and re-staged — re-run `git commit` to complete it.
+
+Pre-commit and CI serve different roles and both stay in place: pre-commit is a local convenience that auto-fixes and can be bypassed (`git commit --no-verify`), while `.github/workflows/ci.yml` re-runs `ruff check`/`ruff format --check` (no auto-fix) plus pytest and bandit as the actual enforcement gate — so a skipped or missing local hook still gets caught before anything merges.
+
 ## Progress
 
 Tier 0 (Level-Up Phase) is complete — weeks 1 through 4 done. Tier 1 (Novice) starts next, bringing the CI/CD pipeline online.
