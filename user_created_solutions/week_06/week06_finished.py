@@ -35,13 +35,12 @@ def check_length(password: str, min_length: int = MIN_LENGTH) -> tuple:
         (True, "Length OK (14 chars)")
         (False, "Too short: 6 chars (minimum 12)")
     """
-    passed, len_string = True, f"OK ({len(password)} chars)"
-    if len(password) < min_length:
-        passed, len_string = (
-            False,
-            f"too short: {len(password)}, chars (minimum {MIN_LENGTH})",
-        )
-    return passed, len_string
+    len_string = f"OK ({len(password)} chars)"
+    len_check = len(password) >= min_length
+    if len_check:
+        len_string = f"too short: {len(password)}, chars (minimum {MIN_LENGTH})"
+
+    return len_check, len_string
 
 
 def check_character_variety(password: str) -> tuple:
@@ -61,16 +60,15 @@ def check_character_variety(password: str) -> tuple:
         r"[^A-Za-z0-9]": "special character",
         r"[0-9]": "digit",
     }
-    passed, char_var_string = True, "OK"
+    char_var_string = "OK"
     missing = []
     for pattern, text in patterns.items():
         if not re.search(pattern, password):
             missing.append(text)
     if missing:
         char_var_string = "missing " + ", ".join(missing) + "."
-        passed = False
         print(char_var_string)
-    return passed, char_var_string
+    return not bool(missing), char_var_string
 
 
 def check_blocklist(password: str, blocklist: set | None = None) -> tuple:
@@ -86,12 +84,13 @@ def check_blocklist(password: str, blocklist: set | None = None) -> tuple:
     reasoning isn't immediately obvious, revisit the Week 3
     "Fix the Bugs" challenge.
     """
-    passed, blockstring = True, "not found in blocklist"
+    block_string = "not found in blocklist"
     if blocklist is None:
         blocklist = DEFAULT_BLOCKLIST
-    if password.lower() in {entry.lower() for entry in blocklist}:
-        passed, blockstring = False, "password string is a commonly used weak password"
-    return passed, blockstring
+    block_check = password.lower() in {entry.lower() for entry in blocklist}
+    if block_check:
+        block_string = "password string is a commonly used weak password"
+    return not block_check, block_string
 
 
 def calculate_strength_score(password: str, blocklist: set | None = None) -> dict:
@@ -133,15 +132,14 @@ def calculate_strength_score(password: str, blocklist: set | None = None) -> dic
     return result_shape
 
 
-def format_report(password_length: int, result: dict) -> str:
+def format_report(result: dict) -> str:
     """Turn the dict returned by calculate_strength_score() into a
     human-readable, multi-line report string suitable for printing.
 
     Should clearly show overall PASS/FAIL, plus one line per check
     showing that check's own pass/fail and message.
     """
-    # NOTE: Changed 1st arg to int to send the length of the password directly
-    # instead of the full password string
+    # NOTE: Took out password arg. Was redundant. And to prevent printing it to standard out.
     # TODO: implement
     raise NotImplementedError
 
@@ -175,7 +173,7 @@ def get_password() -> str:
 def main():
     password_string = get_password()
     result = calculate_strength_score(password_string)
-    print(format_report(len(password_string), result))
+    print(format_report(result))
 
 
 if __name__ == "__main__":
