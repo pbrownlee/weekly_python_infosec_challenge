@@ -1,0 +1,7 @@
+1. Get user password (securely)
+2. Send password to first check: length. Return check name (str) and result (boolean).
+3. Send password to second check: char class. Return check name (str) and result (boolean).
+4. Send password to third check: blocklist. Return check name (str) and result (boolean).
+5. Gather results in a json like shape: length, checks, overall_result (pass is all 3 checks pass, otherwise fail)
+Send results shape to print function
+6. Print results and exit
