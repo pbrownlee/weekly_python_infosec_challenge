@@ -35,12 +35,12 @@ def check_length(password: str, min_length: int = MIN_LENGTH) -> tuple:
         (True, "Length OK (14 chars)")
         (False, "Too short: 6 chars (minimum 12)")
     """
-    len_string = f"OK ({len(password)} chars)"
-    len_check = len(password) < min_length
-    passed = not len_check  # flagges if password is too short
-    if len_check:
-        len_string = f"too short: {len(password)}, chars (minimum {MIN_LENGTH})"
 
+    passed = len(password) >= min_length
+    if passed:
+        len_string = f"OK ({len(password)} chars)"
+    else:
+        len_string = f"too short: {len(password)}, chars (minimum {min_length})"
     return passed, len_string
 
 
@@ -85,12 +85,13 @@ def check_blocklist(password: str, blocklist: set | None = None) -> tuple:
     reasoning isn't immediately obvious, revisit the Week 3
     "Fix the Bugs" challenge.
     """
-    block_string = "not found in blocklist"
+
     if blocklist is None:
         blocklist = DEFAULT_BLOCKLIST
-    block_check = password.lower() in {entry.lower() for entry in blocklist}
-    passed = not block_check  # If block_check had a match. The the check fails
-    if block_check:
+    passed = password.lower() not in {entry.lower() for entry in blocklist}
+    if passed:
+        block_string = "not found in blocklist"
+    else:
         block_string = "password string is a commonly used weak password"
     return passed, block_string
 
@@ -143,14 +144,13 @@ def format_report(result: dict) -> str:
     """
     # NOTE: Took out password arg. Was redundant. And to prevent printing it to standard out.
     # all of the necessary info shoud be in the dict passed by calculate_strength_score()
-    # TODO: implement
-    pass_str = "[PASS]"
-    fail_str = "[FAIL]"
+    ok_label = "[PASS]"
+    fail_label = "[FAIL]"
     report_string = (
-        f"Password Audit: {pass_str if result['overall_pass'] else fail_str}\n"
+        f"Password Audit: {ok_label if result['overall_pass'] else fail_label}\n"
     )
     for check in result["checks"]:
-        status_string = pass_str if check["passed"] else fail_str
+        status_string = ok_label if check["passed"] else fail_label
         report_string += f"{status_string} {check['name']}: {check['message']}\n"
     return report_string
 
