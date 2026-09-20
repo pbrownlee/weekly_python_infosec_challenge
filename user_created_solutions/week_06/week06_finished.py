@@ -36,7 +36,7 @@ def check_length(password: str, min_length: int = MIN_LENGTH) -> tuple:
         (False, "Too short: 6 chars (minimum 12)")
     """
     passed, len_string = True, f"OK ({len(password)} chars)"
-    if len(password) < MIN_LENGTH:
+    if len(password) < min_length:
         passed, len_string = (
             False,
             f"too short: {len(password)}, chars (minimum {MIN_LENGTH})",
@@ -111,19 +111,26 @@ def calculate_strength_score(password: str, blocklist: set | None = None) -> dic
     Decide on this exact shape before writing the function body --
     format_report() below depends on it staying stable.
     """
-    result_shape = {}  # returning this
-    # overall_pass = True
-    check_resutls = []
-    result_shape["password_length"] = len(password)  # add length k/v pair
-    # passed, text = check_length()
-    check_resutls.append(
-        {
-            "name": "length",
-            #        "passed": passed,
-        }
-    )
+    result_shape = {}
 
-    raise result_shape
+    checks = [
+        ("length", *check_length(password)),
+        ("character_variety", *check_character_variety(password)),
+        ("blocklist", *check_blocklist(password, blocklist)),
+    ]
+
+    results_list = [
+        {"name": name, "passed": passed, "message": message}
+        for name, passed, message in checks
+    ]
+
+    overall_pass = all(check["passed"] for check in results_list)
+
+    result_shape["password_length"] = len(password)
+    result_shape["overall_pass"] = overall_pass
+    result_shape["checks"] = results_list
+
+    return result_shape
 
 
 def format_report(password_length: int, result: dict) -> str:
