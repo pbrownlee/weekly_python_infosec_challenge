@@ -36,11 +36,12 @@ def check_length(password: str, min_length: int = MIN_LENGTH) -> tuple:
         (False, "Too short: 6 chars (minimum 12)")
     """
     len_string = f"OK ({len(password)} chars)"
-    len_check = len(password) >= min_length
+    len_check = len(password) < min_length
+    passed = not len_check  # flagges if password is too short
     if len_check:
         len_string = f"too short: {len(password)}, chars (minimum {MIN_LENGTH})"
 
-    return len_check, len_string
+    return passed, len_string
 
 
 def check_character_variety(password: str) -> tuple:
@@ -68,7 +69,6 @@ def check_character_variety(password: str) -> tuple:
     passed = not bool(missing)  # If items were populated in missing, the check failed
     if missing:
         char_var_string = "missing " + ", ".join(missing) + "."
-        print(char_var_string)
     return passed, char_var_string
 
 
@@ -144,8 +144,14 @@ def format_report(result: dict) -> str:
     # NOTE: Took out password arg. Was redundant. And to prevent printing it to standard out.
     # all of the necessary info shoud be in the dict passed by calculate_strength_score()
     # TODO: implement
-    report_string = ""
-
+    pass_str = "[PASS]"
+    fail_str = "[FAIL]"
+    report_string = (
+        f"Password Audit: {pass_str if result['overall_pass'] else fail_str}\n"
+    )
+    for check in result["checks"]:
+        status_string = pass_str if check["passed"] else fail_str
+        report_string += f"{status_string} {check['name']}: {check['message']}\n"
     return report_string
 
 

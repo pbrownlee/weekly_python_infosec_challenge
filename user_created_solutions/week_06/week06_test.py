@@ -68,6 +68,6 @@ def test_calculate_strength_score_aggregates_all_three_checks():
 
 def test_format_report_is_human_readable():
     result = calculate_strength_score("password")
-    report = format_report("password", result)
+    report = format_report(result)
     assert isinstance(report, str)
     assert "FAIL" in report.upper() or "PASS" in report.upper()
