@@ -65,10 +65,11 @@ def check_character_variety(password: str) -> tuple:
     for pattern, text in patterns.items():
         if not re.search(pattern, password):
             missing.append(text)
+    passed = not bool(missing)  # If items were populated in missing, the check failed
     if missing:
         char_var_string = "missing " + ", ".join(missing) + "."
         print(char_var_string)
-    return not bool(missing), char_var_string
+    return passed, char_var_string
 
 
 def check_blocklist(password: str, blocklist: set | None = None) -> tuple:
@@ -88,9 +89,10 @@ def check_blocklist(password: str, blocklist: set | None = None) -> tuple:
     if blocklist is None:
         blocklist = DEFAULT_BLOCKLIST
     block_check = password.lower() in {entry.lower() for entry in blocklist}
+    passed = not block_check  # If block_check had a match. The the check fails
     if block_check:
         block_string = "password string is a commonly used weak password"
-    return not block_check, block_string
+    return passed, block_string
 
 
 def calculate_strength_score(password: str, blocklist: set | None = None) -> dict:
@@ -140,8 +142,11 @@ def format_report(result: dict) -> str:
     showing that check's own pass/fail and message.
     """
     # NOTE: Took out password arg. Was redundant. And to prevent printing it to standard out.
+    # all of the necessary info shoud be in the dict passed by calculate_strength_score()
     # TODO: implement
-    raise NotImplementedError
+    report_string = ""
+
+    return report_string
 
 
 # NOTE: Implementing a more secure way to collect the password with getpass module
