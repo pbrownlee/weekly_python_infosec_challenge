@@ -30,6 +30,8 @@ Two top-level folders separate the reference material from personal work, so it'
 - **`course_generated_solutions/`** — the reference solution and reasoning walkthrough generated for each week, one `week_NN/` subfolder per week (`week_NN/weekNN_solution.py` + `week_NN/weekNN_explanation.md`). These arrive one week behind — the solution for week *N* is delivered alongside week *N+1*'s challenge — so review happens after a real attempt, not before.
 - **`user_created_solutions/`** — my own finished code for each week, one `week_NN/` subfolder per week (`week_NN/weekNN_finished.py`), plus whatever else I wrote myself while working through it: my pytest tests (`weekNN_test.py`), my Mermaid planning charts (`weekNN_chart.md`), and any planning notes (e.g. `weekNN_logic.txt`). This is the "did I actually solve it" record, kept separate from both the starter code and the reference answer.
 
+> **Disclaimer:** everything under `course_generated_solutions/` is AI-generated (by Claude, via the same scheduled process described at the bottom of this README) and hasn't been hand-verified line by line. Treat it as a reference to compare against after your own attempt, not as ground truth — it can and occasionally does drift from the matching `weekNN_challenge.md` brief (e.g. a different subcommand name or argument style than the spec calls for) or contain other mistakes. If something in a reference solution looks off, trust the challenge brief and your own working, tested code over it.
+
 ## Curriculum map
 
 **Tier 0 — Level-Up Phase (weeks 1-4).** Not new syntax — practical structure, standard-library reps, and (week 3 specifically) a hands-on introduction to pytest.
