@@ -1,0 +1,15 @@
+program starts
+choose to baseline files or verfiy
+
+baseline path (must take path to walkthough)
+- walk through files in directory (pathlib)
+- compute hash of files (hashlib)
+- output a json with path/file -> hash and the directory
+
+
+verfiy path (must take baseline file and verify directory to scan)
+- walk through files in new directory (pathlib)
+- compute hash of files in new directory (hashlib)
+- compare baseline to new file hash. modified if different
+- check for new files 
+- check for removed files
