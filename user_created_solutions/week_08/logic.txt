@@ -1,0 +1,7 @@
+1. Network scan program starts when a host, a start port range and and end port range is given to the program
+2. Arguments sent to a scan_range function
+3. Scan range function uses threads to call a scan port funtion for each indivual port in the port range Arguments
+4. scan port function sends a connect check to a port, returns an open or closed response
+5. Scan range function collects resposes from scan ports. 
+6. Scan range sends the collected port responses to a formatting function
+7. Program exits
