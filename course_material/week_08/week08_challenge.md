@@ -1,6 +1,6 @@
 # Week 8 — Local Port Scanner
 
-**Tier 2: Beginner · Topic 4 of 4**
+**Tier 2: Beginner · Topic 1 of 4**
 
 ## Problem Statement
 
