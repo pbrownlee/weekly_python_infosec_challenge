@@ -1,4 +1,4 @@
 pytest
 bandit
 pre-commit
-ruff
+ruff==0.17.1

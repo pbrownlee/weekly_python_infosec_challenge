@@ -38,7 +38,7 @@ def parse_log_line(line: str) -> dict[str, datetime | str] | None:
     finding = LOG_LINE_PATTERN.match(line)
     if finding is None:
         return None
-    converted_time = datetime.strptime(finding.group("timestamp"), TIMESTAMP_FORMAT)  # noqa: DTZ007
+    converted_time = datetime.strptime(finding.group("timestamp"), TIMESTAMP_FORMAT)
     parsed_line = {
         "timestamp": converted_time,
         "status": finding.group("status"),

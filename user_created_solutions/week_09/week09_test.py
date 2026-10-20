@@ -26,7 +26,7 @@ def test_parse_log_line_valid_failed():
     assert result["status"] == "Failed"
     assert result["user"] == "admin"
     assert result["ip"] == "203.0.113.50"
-    assert result["timestamp"] == datetime(2026, 10, 10, 2, 30, 11)  # noqa: DTZ001
+    assert result["timestamp"] == datetime(2026, 10, 10, 2, 30, 11)
 
 
 def test_parse_log_line_valid_accepted():
@@ -104,8 +104,8 @@ def test_generate_report_empty():
 def test_generate_report_contains_flagged_ip():
     flagged = {
         "203.0.113.50": [
-            datetime(2026, 10, 10, 2, 30, 11),  # noqa: DTZ001
-            datetime(2026, 10, 10, 2, 30, 19),  # noqa: DTZ001
+            datetime(2026, 10, 10, 2, 30, 11),
+            datetime(2026, 10, 10, 2, 30, 19),
         ]
     }
     report = generate_report(flagged)
