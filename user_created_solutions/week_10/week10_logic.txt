@@ -1,0 +1,47 @@
+Arguments
+
+--input-glob = list of files containing json entries of ioc records. Check for existence of files, error if the glob list is empty and exit with a message. Default location: "sample_data/ioc_feed_page_*.json"
+--csv-out = output results to csv, Default file: "ioc_report.csv"
+--json-out = output results to json, Default file: "ioc_report.json"
+--max-age-days = the max amount of days to consider, a finding to be valid Default: 30 days
+
+1. Program starts
+2. Collect the list of json files, load one at a time, have a counter for the pages (Read)
+3. In each file, yield an IOC entry, have a counter for each entry (Read)
+4. Filter if the record, keep based on criteria (Filter):
+      sevritiy is critical or high
+      last_seen fall in time range between defined "currrent time" (variable to pass set in main function) and defined number of days ago 
+            Note: last_seen value will have to be converted to a datetime time zone object for comparison to work (use parse_ts helper below)
+            Boundary: keep the record if last_seen >= cutoff (now - max_age_days), i.e. a record exactly max_age_days old is kept
+            Future dates: drop records whose last_seen is later than "current time"
+
+      Timestamp helper (parse_ts) - shared by Filter and Normalize:
+            Input can be any of three formats:
+                  "2026-09-25 00:00:00"   (space separated, no Z)
+                  "2026-10-10T00:00:00"   (ISO, no Z)
+                  "2026-10-07T00:00:00Z"  (ISO, UTC)
+            Convert to a datetime; if it has no timezone, treat it as UTC
+            Output format (format_ts) for normalized records: "2026-10-07T00:00:00Z"
+5. For records that pass filter function, Normalize IOC entry to look like this shape (fix timestamps: parse_ts then format_ts on first_seen and last_seen)  (Normalize) ```
+{"indicator": "143.233.228.238", "type": "ip", "severity": "high",
+      "first_seen": "2026-09-25T00:00:00Z", "last_seen": "2026-10-07T00:00:00Z",
+      "source": "VirusTotal"}
+6. Once you finish normalizing record, add it to a list of records that have been filtered and normalized
+7. Take that list of normalized/filtered records and remove the duplicates, put this in to a final list of deduped entries
+      The id for distict entries is the indicator key
+      The critera to keep unique id entries is determined by which entry has the most recent last_seen value (compare as parsed datetimes, not strings), if the values are the same, keep the entry already present
+8. Report all the deduped entries via CSV and JSON (Report)
+9. Print the following:
+      Total of raw records across number of pages
+      Total of fitered records
+      Total of deduped records 
+      Wrote total of deduped records to csv and json
+10. exit program
+
+Need to add: 
+
+parse_ts helper fucntion and tests 
+format_ts helper function and tests
+deduped function and tests
+
+

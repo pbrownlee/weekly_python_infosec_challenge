@@ -1,0 +1,258 @@
+[
+  {
+    "indicator": "100.242.191.226",
+    "type": "ip",
+    "severity": "high",
+    "first_seen": "2026-09-24 00:00:00",
+    "last_seen": "2026-10-16 00:00:00",
+    "source": "Spamhaus"
+  },
+  {
+    "indicator": "malicious-update-694.xyz",
+    "type": "domain",
+    "severity": "medium",
+    "first_seen": "2026-10-05T00:00:00",
+    "last_seen": "2026-10-11 00:00:00",
+    "source": "abuse.ch"
+  },
+  {
+    "indicator": "3cf7173c6d5f8e7d529ebc54d22ae3a14ea44d74adacbad638804bcf652c7cb6",
+    "type": "hash",
+    "severity": "critical",
+    "first_seen": "2026-09-05T00:00:00",
+    "last_seen": "2026-10-01T00:00:00",
+    "source": "VirusTotal"
+  },
+  {
+    "indicator": "free-gift-claim-303.com",
+    "type": "domain",
+    "severity": "critical",
+    "first_seen": "2026-09-20T00:00:00Z",
+    "last_seen": "2026-09-22T00:00:00Z",
+    "source": "AlienVault OTX"
+  },
+  {
+    "indicator": "138.164.122.88",
+    "type": "ip",
+    "severity": "medium",
+    "first_seen": "2026-07-05T00:00:00",
+    "last_seen": "2026-07-25T00:00:00",
+    "source": "Spamhaus"
+  },
+  {
+    "indicator": "251.162.29.38",
+    "type": "ip",
+    "severity": "medium",
+    "first_seen": "2026-06-24T00:00:00Z",
+    "last_seen": "2026-07-02T00:00:00Z",
+    "source": "internal-honeypot"
+  },
+  {
+    "indicator": "4099a8646fb9f42338f800a32abd806261f0ee82efa55d1b72e53a492441f17d",
+    "type": "hash",
+    "severity": "medium",
+    "first_seen": "2026-08-22 00:00:00",
+    "last_seen": "2026-10-04T00:00:00",
+    "source": "Spamhaus"
+  },
+  {
+    "indicator": "malicious-update-877.net",
+    "type": "domain",
+    "severity": "low",
+    "first_seen": "2026-09-13 00:00:00",
+    "last_seen": "2026-10-08 00:00:00",
+    "source": "abuse.ch"
+  },
+  {
+    "indicator": "http://185.220.101.53/wp-admin/x.php",
+    "type": "url",
+    "severity": "medium",
+    "first_seen": "2026-07-06T00:00:00",
+    "last_seen": "2026-07-30 00:00:00",
+    "source": "abuse.ch"
+  },
+  {
+    "indicator": "246.36.169.224",
+    "type": "ip",
+    "severity": "critical",
+    "first_seen": "2026-07-05T00:00:00Z",
+    "last_seen": "2026-07-30T00:00:00Z",
+    "source": "Spamhaus"
+  },
+  {
+    "indicator": "236.201.178.49",
+    "type": "ip",
+    "severity": "critical",
+    "first_seen": "2026-08-16 00:00:00",
+    "last_seen": "2026-08-04 00:00:00",
+    "source": "VirusTotal"
+  },
+  {
+    "indicator": "f898aec39680c43a4910359e4d506c9c1d8bd81b04dd51b3ab91c51ac90ff108",
+    "type": "hash",
+    "severity": "critical",
+    "first_seen": "2026-10-03T00:00:00",
+    "last_seen": "2026-10-12 00:00:00",
+    "source": "VirusTotal"
+  },
+  {
+    "indicator": "12.206.166.198",
+    "type": "ip",
+    "severity": "low",
+    "first_seen": "2026-10-08T00:00:00Z",
+    "last_seen": "2026-10-17T00:00:00",
+    "source": "AlienVault OTX"
+  },
+  {
+    "indicator": "215.35.246.254",
+    "type": "ip",
+    "severity": "critical",
+    "first_seen": "2026-09-10T00:00:00Z",
+    "last_seen": "2026-10-09T00:00:00",
+    "source": "abuse.ch"
+  },
+  {
+    "indicator": "146.59.68.121",
+    "type": "ip",
+    "severity": "high",
+    "first_seen": "2026-07-31T00:00:00",
+    "last_seen": "2026-10-16 00:00:00",
+    "source": "VirusTotal"
+  },
+  {
+    "indicator": "78.110.217.250",
+    "type": "ip",
+    "severity": "high",
+    "first_seen": "2026-06-07 00:00:00",
+    "last_seen": "2026-10-16T00:00:00",
+    "source": "VirusTotal"
+  },
+  {
+    "indicator": "malicious-update-740.top",
+    "type": "domain",
+    "severity": "low",
+    "first_seen": "2026-06-29 00:00:00",
+    "last_seen": "2026-09-08T00:00:00",
+    "source": "abuse.ch"
+  },
+  {
+    "indicator": "53b0589a22f3b6649aa7e52536ef28c3653fe095fbc89c4477616db7fb44bf03",
+    "type": "hash",
+    "severity": "low",
+    "first_seen": "2026-07-30T00:00:00",
+    "last_seen": "2026-09-02T00:00:00",
+    "source": "abuse.ch"
+  },
+  {
+    "indicator": "246.189.243.247",
+    "type": "ip",
+    "severity": "critical",
+    "first_seen": "2026-09-26T00:00:00",
+    "last_seen": "2026-08-19 00:00:00",
+    "source": "internal-honeypot"
+  },
+  {
+    "indicator": "536cd6786f535723239a9b27b7e64ec9f85661631baab2319ecaf2f937a5d650",
+    "type": "hash",
+    "severity": "low",
+    "first_seen": "2026-07-25 00:00:00",
+    "last_seen": "2026-10-02T00:00:00Z",
+    "source": "VirusTotal"
+  },
+  {
+    "indicator": "81.39.25.239",
+    "type": "ip",
+    "severity": "medium",
+    "first_seen": "2026-09-13T00:00:00Z",
+    "last_seen": "2026-10-17T00:00:00Z",
+    "source": "internal-honeypot"
+  },
+  {
+    "indicator": "614482f8352c046ee01af0aad45cacb2e6ed5c8e5c2077311a9fa0e0591064d2",
+    "type": "hash",
+    "severity": "low",
+    "first_seen": "2026-07-02T00:00:00Z",
+    "last_seen": "2026-09-11T00:00:00Z",
+    "source": "Spamhaus"
+  },
+  {
+    "indicator": "117.215.26.77",
+    "type": "ip",
+    "severity": "high",
+    "first_seen": "2026-07-31 00:00:00",
+    "last_seen": "2026-09-29T00:00:00Z",
+    "source": "abuse.ch"
+  },
+  {
+    "indicator": "244.46.68.56",
+    "type": "ip",
+    "severity": "low",
+    "first_seen": "2026-08-03 00:00:00",
+    "last_seen": "2026-08-14T00:00:00",
+    "source": "abuse.ch"
+  },
+  {
+    "indicator": "cdn-assets-mirror-444.top",
+    "type": "domain",
+    "severity": "critical",
+    "first_seen": "2026-09-10T00:00:00Z",
+    "last_seen": "2026-09-26 00:00:00",
+    "source": "Spamhaus"
+  },
+  {
+    "indicator": "free-gift-claim-547.com",
+    "type": "domain",
+    "severity": "low",
+    "first_seen": "2026-10-07 00:00:00",
+    "last_seen": "2026-10-15T00:00:00",
+    "source": "internal-honeypot"
+  },
+  {
+    "indicator": "c262807251d9432584e3f90441fc2d4eb5305e97e590eca60244e34d50f0f8c7",
+    "type": "hash",
+    "severity": "low",
+    "first_seen": "2026-10-01T00:00:00Z",
+    "last_seen": "2026-10-07 00:00:00",
+    "source": "VirusTotal"
+  },
+  {
+    "indicator": "134.148.94.213",
+    "type": "ip",
+    "severity": "high",
+    "first_seen": "2026-08-31 00:00:00",
+    "last_seen": "2026-10-03 00:00:00",
+    "source": "AlienVault OTX"
+  },
+  {
+    "indicator": "invoice-payment-868.top",
+    "type": "domain",
+    "severity": "medium",
+    "first_seen": "2026-07-27T00:00:00",
+    "last_seen": "2026-09-26 00:00:00",
+    "source": "abuse.ch"
+  },
+  {
+    "indicator": "invoice-payment-880.net",
+    "type": "domain",
+    "severity": "medium",
+    "first_seen": "2026-07-08 00:00:00",
+    "last_seen": "2026-08-13T00:00:00Z",
+    "source": "Spamhaus"
+  },
+  {
+    "indicator": "67093af73321fec758224d05a82bfb2d4b348579f22165a18a2bf49b360d6c34",
+    "type": "hash",
+    "severity": "low",
+    "first_seen": "2026-09-30T00:00:00",
+    "last_seen": "2026-09-30T00:00:00",
+    "source": "AlienVault OTX"
+  },
+  {
+    "indicator": "7.233.64.186",
+    "type": "ip",
+    "severity": "high",
+    "first_seen": "2026-10-07 00:00:00",
+    "last_seen": "2026-10-12 00:00:00",
+    "source": "AlienVault OTX"
+  }
+]
