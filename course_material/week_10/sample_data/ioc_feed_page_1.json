@@ -1,0 +1,274 @@
+[
+  {
+    "indicator": "11.93.119.124",
+    "type": "ip",
+    "severity": "high",
+    "first_seen": "2026-07-22 00:00:00",
+    "last_seen": "2026-08-10T00:00:00",
+    "source": "VirusTotal"
+  },
+  {
+    "indicator": "secure-login-portal-598.top",
+    "type": "domain",
+    "severity": "high",
+    "first_seen": "2026-07-26 00:00:00",
+    "last_seen": "2026-07-27T00:00:00Z",
+    "source": "AlienVault OTX"
+  },
+  {
+    "indicator": "cdn-assets-mirror-619.com",
+    "type": "domain",
+    "severity": "high",
+    "first_seen": "2026-06-25 00:00:00",
+    "last_seen": "2026-08-01T00:00:00Z",
+    "source": "VirusTotal"
+  },
+  {
+    "indicator": "143.233.228.238",
+    "type": "ip",
+    "severity": "high",
+    "first_seen": "2026-09-25 00:00:00",
+    "last_seen": "2026-10-07T00:00:00Z",
+    "source": "VirusTotal"
+  },
+  {
+    "indicator": "89.165.23.105",
+    "type": "ip",
+    "severity": "high",
+    "first_seen": "2026-06-24T00:00:00Z",
+    "last_seen": "2026-10-06 00:00:00",
+    "source": "VirusTotal"
+  },
+  {
+    "indicator": "http://45.153.160.240/gate.php",
+    "type": "url",
+    "severity": "critical",
+    "first_seen": "2026-06-13 00:00:00",
+    "last_seen": "2026-10-15T00:00:00Z",
+    "source": "VirusTotal"
+  },
+  {
+    "indicator": "170.121.26.186",
+    "type": "ip",
+    "severity": "low",
+    "first_seen": "2026-07-09T00:00:00",
+    "last_seen": "2026-08-09T00:00:00",
+    "source": "internal-honeypot"
+  },
+  {
+    "indicator": "malicious-update-687.xyz",
+    "type": "domain",
+    "severity": "low",
+    "first_seen": "2026-09-08 00:00:00",
+    "last_seen": "2026-09-15T00:00:00",
+    "source": "internal-honeypot"
+  },
+  {
+    "indicator": "7c0d44c54c49166fe176d61dd2f383997d91a6e9374e9e44b9d6e76b46d1b74a",
+    "type": "hash",
+    "severity": "high",
+    "first_seen": "2026-08-17 00:00:00",
+    "last_seen": "2026-08-18T00:00:00Z",
+    "source": "internal-honeypot"
+  },
+  {
+    "indicator": "251.212.209.104",
+    "type": "ip",
+    "severity": "medium",
+    "first_seen": "2026-07-06T00:00:00",
+    "last_seen": "2026-07-11T00:00:00Z",
+    "source": "internal-honeypot"
+  },
+  {
+    "indicator": "malicious-update-367.xyz",
+    "type": "domain",
+    "severity": "low",
+    "first_seen": "2026-08-27T00:00:00Z",
+    "last_seen": "2026-08-30T00:00:00Z",
+    "source": "VirusTotal"
+  },
+  {
+    "indicator": "http://185.220.101.94/panel/login",
+    "type": "url",
+    "severity": "critical",
+    "first_seen": "2026-06-28T00:00:00Z",
+    "last_seen": "2026-10-14T00:00:00Z",
+    "source": "Spamhaus"
+  },
+  {
+    "indicator": "cdn-assets-mirror-548.net",
+    "type": "domain",
+    "severity": "critical",
+    "first_seen": "2026-10-04 00:00:00",
+    "last_seen": "2026-10-05T00:00:00",
+    "source": "Spamhaus"
+  },
+  {
+    "indicator": "invoice-payment-258.xyz",
+    "type": "domain",
+    "severity": "critical",
+    "first_seen": "2026-09-03T00:00:00Z",
+    "last_seen": "2026-10-01 00:00:00",
+    "source": "abuse.ch"
+  },
+  {
+    "indicator": "366b3fb3b680b3b4e0e72d43b6401b82aeacfb5613059b763605f8b3616e5287",
+    "type": "hash",
+    "severity": "medium",
+    "first_seen": "2026-06-25 00:00:00",
+    "last_seen": "2026-07-03 00:00:00",
+    "source": "VirusTotal"
+  },
+  {
+    "indicator": "244.46.68.56",
+    "type": "ip",
+    "severity": "critical",
+    "first_seen": "2026-08-08 00:00:00",
+    "last_seen": "2026-10-17T00:00:00Z",
+    "source": "VirusTotal"
+  },
+  {
+    "indicator": "217.198.48.200",
+    "type": "ip",
+    "severity": "critical",
+    "first_seen": "2026-08-04 00:00:00",
+    "last_seen": "2026-10-01 00:00:00",
+    "source": "abuse.ch"
+  },
+  {
+    "indicator": "248.198.51.70",
+    "type": "ip",
+    "severity": "medium",
+    "first_seen": "2026-07-22 00:00:00",
+    "last_seen": "2026-09-24T00:00:00Z",
+    "source": "abuse.ch"
+  },
+  {
+    "indicator": "http://45.153.160.19/dl/payload.bin",
+    "type": "url",
+    "severity": "high",
+    "first_seen": "2026-09-09T00:00:00Z",
+    "last_seen": "2026-09-25T00:00:00",
+    "source": "abuse.ch"
+  },
+  {
+    "indicator": "5dab49cf1eaa138e734b72113f7145c4b0a899932f7aad60f86facf6613d443e",
+    "type": "hash",
+    "severity": "critical",
+    "first_seen": "2026-07-14T00:00:00Z",
+    "last_seen": "2026-10-08 00:00:00",
+    "source": "internal-honeypot"
+  },
+  {
+    "indicator": "225.54.206.196",
+    "type": "ip",
+    "severity": "low",
+    "first_seen": "2026-10-02 00:00:00",
+    "last_seen": "2026-10-13 00:00:00",
+    "source": "VirusTotal"
+  },
+  {
+    "indicator": "9710dc4ce58b0f66478023b05aaa7c000370248cab7e95606efca9646f415003",
+    "type": "hash",
+    "severity": "medium",
+    "first_seen": "2026-09-12T00:00:00",
+    "last_seen": "2026-10-13 00:00:00",
+    "source": "AlienVault OTX"
+  },
+  {
+    "indicator": "invoice-payment-621.net",
+    "type": "domain",
+    "severity": "medium",
+    "first_seen": "2026-06-27T00:00:00Z",
+    "last_seen": "2026-09-18 00:00:00",
+    "source": "VirusTotal"
+  },
+  {
+    "indicator": "121.149.109.132",
+    "type": "ip",
+    "severity": "medium",
+    "first_seen": "2026-08-02T00:00:00",
+    "last_seen": "2026-08-16 00:00:00",
+    "source": "AlienVault OTX"
+  },
+  {
+    "indicator": "218.167.244.215",
+    "type": "ip",
+    "severity": "critical",
+    "first_seen": "2026-07-30 00:00:00",
+    "last_seen": "2026-10-14T00:00:00",
+    "source": "abuse.ch"
+  },
+  {
+    "indicator": "bb0dbec025739f1eefab952b30916ddd8c5443cd72a925a0980ff209e127d5c4",
+    "type": "hash",
+    "severity": "high",
+    "first_seen": "2026-08-31T00:00:00Z",
+    "last_seen": "2026-09-05T00:00:00",
+    "source": "Spamhaus"
+  },
+  {
+    "indicator": "671ac5faf59b1ff675c99c4f7c96cd47d11ea5dd4e66200133dde26c28d1cf58",
+    "type": "hash",
+    "severity": "critical",
+    "first_seen": "2026-07-06T00:00:00",
+    "last_seen": "2026-08-10 00:00:00",
+    "source": "Spamhaus"
+  },
+  {
+    "indicator": "b5fd17f84c6dda7d4fb9573e65ae3c156fdd651c9ed6f3fefe1d60a643d0eeda",
+    "type": "hash",
+    "severity": "high",
+    "first_seen": "2026-09-26T00:00:00Z",
+    "last_seen": "2026-10-14 00:00:00",
+    "source": "abuse.ch"
+  },
+  {
+    "indicator": "e244fbf53b38517ee4ca7739505dcb5bc5920efbd398f8ff53fe66e8cc946cad",
+    "type": "hash",
+    "severity": "medium",
+    "first_seen": "2026-08-14T00:00:00",
+    "last_seen": "2026-09-01T00:00:00",
+    "source": "internal-honeypot"
+  },
+  {
+    "indicator": "cdn-assets-mirror-169.xyz",
+    "type": "domain",
+    "severity": "low",
+    "first_seen": "2026-07-13T00:00:00",
+    "last_seen": "2026-07-31T00:00:00Z",
+    "source": "internal-honeypot"
+  },
+  {
+    "indicator": "157.157.28.251",
+    "type": "ip",
+    "severity": "low",
+    "first_seen": "2026-08-21T00:00:00Z",
+    "last_seen": "2026-08-26 00:00:00",
+    "source": "Spamhaus"
+  },
+  {
+    "indicator": "47fc99ef1c8891a2c1feadbee13378b6a3ed6e785ebccec7dca7aab7a9f76386",
+    "type": "hash",
+    "severity": "medium",
+    "first_seen": "2026-08-23T00:00:00Z",
+    "last_seen": "2026-10-01 00:00:00",
+    "source": "internal-honeypot"
+  },
+  {
+    "indicator": "74.61.73.160",
+    "type": "ip",
+    "severity": "low",
+    "first_seen": "2026-09-21T00:00:00Z",
+    "last_seen": "2026-09-21T00:00:00",
+    "source": "abuse.ch"
+  },
+  {
+    "indicator": "invoice-payment-530.xyz",
+    "type": "domain",
+    "severity": "medium",
+    "first_seen": "2026-09-25T00:00:00",
+    "last_seen": "2026-10-05T00:00:00",
+    "source": "abuse.ch"
+  }
+]
